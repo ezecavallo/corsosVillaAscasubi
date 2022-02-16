@@ -1,0 +1,135 @@
+html, body {
+  font-family: 'Mulish', sans-serif;
+  margin: 0;
+  color: #fff;
+}
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-color: #0D001E;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+.header {
+  padding-top: 1em;
+}
+
+.logo {
+  background: url('./images/logo.png');
+  width: 100%;
+  height: 5em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.headline {
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
+.content {
+  /* display: flex; */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat( auto-fit, minmax(19em, 1fr) );
+  padding: 2em;
+}
+
+
+.card {
+  width: 16em;
+  height: 16em;
+  margin: 1em auto;
+  border-radius: 20px;
+  position: relative;
+
+  transition: all .1s ease-out;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+} 
+
+.card__detail {
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgb(13 0 30 / 50%);
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 0 1em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all .1s ease-out;
+}
+
+.card__detail h3 {
+  margin: 0.5em 0;
+  font-size: 1.5em;
+}
+
+.card__detail span {
+  font-weight: 600;
+}
+
+.card__detail .button {
+  background: linear-gradient(281.23deg, #6F0018 -54.09%, #DE0030 71.11%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  width: 8em;
+  height: 3em;
+  border-radius: 20px;
+  border: none;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* animation */
+.card:hover {
+  transform: scale(1.2);
+  transition: all .255s ease-out;
+}
+
+.card:hover .card__detail {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  /* transform: scale(.7); */
+  transition: all .255s ease-out;
+}
+
+.footer {
+  height: 4em;
+  padding: 1em 1em 4em;
+}
+
+.sponsors {
+  background: url(./images/sponsors.png);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
