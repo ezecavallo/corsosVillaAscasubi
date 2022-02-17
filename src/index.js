@@ -17,19 +17,27 @@ import "./assets/style/master.css";
     body.insertBefore(modalElement, body.firstChild);
   };
 
+  const removeModal = () => {
+    const modal = document.getElementsByClassName("modal")[0];
+    modal.parentNode.removeChild(modal);
+  };
+
   const onSuccess = () => {
     // Set cookies to identify if device already vote
-    setCookie("4ca5d171acaac2c5ca261c97b0d40383", true);
+    console.log("Cookie seted");
+    // setCookie("4ca5d171acaac2c5ca261c97b0d40383", true);
 
     // Delete modal
-    const modal = document.getElementsByClassName("modal");
-    modal.remove();
+    removeModal();
+
+    // Reload page to trigger redirect
+    console.log("redirect");
   };
 
   const onError = () => {
     // Delete modal
-    const modal = document.getElementsByClassName("modal")[0];
-    modal.remove();
+    removeModal();
+    alert("Ha ocurrido un error, vuelva a intentarlo.");
   };
 
   const cards = document.querySelectorAll(".button");
@@ -37,31 +45,23 @@ import "./assets/style/master.css";
     e.addEventListener("click", async (e) => {
       if (getCookie("4ca5d171acaac2c5ca261c97b0d40383")) return;
       // return window.location.replace("success.html");
-
-      const formData = new FormData();
       const parent = e.currentTarget.parentElement;
       const data = parent.firstElementChild.innerText;
       onLoading();
-      formData.append("participante", data);
-      console.log(formData);
-      for (var pair of formData.entries()) {
-        console.log(pair[0] + ", " + pair[1]);
-      }
+
+      const jsonData = JSON.stringify({ participante: data });
 
       try {
         const response = await fetch(form.action, {
           method: "POST",
-          headers: {
-            "X-REQMETHOD": "send-v1",
-            "Content-Type": "application/json",
-          },
-          body: formData,
+          mode: "cors",
+          body: jsonData,
         });
-        console.log(response);
         if (response.ok) onSuccess();
+        if (!response.ok) onError();
       } catch (error) {
+        console.log(error);
         onError();
-        alert("Ha ocurrido un error, vuelva a intentarlo.");
       }
     });
   });

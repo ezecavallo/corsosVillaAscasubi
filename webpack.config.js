@@ -60,7 +60,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "assets/style/[name].css",
     }),
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
         {
