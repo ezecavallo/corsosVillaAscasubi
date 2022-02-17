@@ -5,10 +5,13 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    index: "./src/index.js",
+    success: "./src/success.js",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "[name].js",
     publicPath: "/",
   },
   resolve: {
@@ -56,6 +59,12 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./public/index.html",
       filename: "./index.html",
+      chunks: ["index"],
+    }),
+    new HtmlWebPackPlugin({
+      template: "./public/success.html",
+      filename: "success.html",
+      chunks: ["success"],
     }),
     new MiniCssExtractPlugin({
       filename: "assets/style/[name].css",
@@ -74,4 +83,10 @@ module.exports = {
       ],
     }),
   ],
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      chunks: "all",
+    },
+  },
 };

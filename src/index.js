@@ -1,4 +1,3 @@
-import Cards from "./templates/Cards";
 import { setCookie, getCookie } from "./utils";
 import "./assets/style/master.css";
 
@@ -24,14 +23,13 @@ import "./assets/style/master.css";
 
   const onSuccess = () => {
     // Set cookies to identify if device already vote
-    console.log("Cookie seted");
-    // setCookie("4ca5d171acaac2c5ca261c97b0d40383", true);
+    setCookie("4ca5d171acaac2c5ca261c97b0d40383", true);
 
     // Delete modal
     removeModal();
 
     // Reload page to trigger redirect
-    console.log("redirect");
+    window.location.replace("success.html");
   };
 
   const onError = () => {

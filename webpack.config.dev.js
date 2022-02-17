@@ -7,6 +7,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   entry: {
     index: "./src/index.js",
+    success: "./src/success.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -58,6 +59,11 @@ module.exports = {
       template: "./public/index.html",
       filename: "index.html",
       chunks: ["index"],
+    }),
+    new HtmlWebPackPlugin({
+      template: "./public/success.html",
+      filename: "success.html",
+      chunks: ["success"],
     }),
     new CopyPlugin({
       patterns: [
