@@ -14,6 +14,40 @@ body {
 
 .wrapper {
   min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper::before {
+  content: '';
+  background: url('./src/images/left.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 14em;
+  height: 12em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-4em, -2em);
+  z-index: -1;
+}
+
+.wrapper::after {
+  content: '';
+  background: url('./src/images/rigth.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 14em;
+  height: 12em;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(4em, -2em);
+  z-index: -1;
 }
 
 .header {
