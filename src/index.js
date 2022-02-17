@@ -27,7 +27,7 @@ import "./assets/style/master.css";
 
   const onSuccess = () => {
     // Set cookies to identify if device already vote
-    setCookie("4ca5d171acaac2c5ca261c97b0d40383", true);
+    setCookie("4ca5d171acaac2c5ca261c97b0d40383", true, 30);
 
     // Delete modal
     removeModal();
