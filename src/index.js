@@ -52,7 +52,8 @@ import "./assets/style/master.css";
         const response = await fetch(form.action, {
           method: "POST",
           headers: {
-            "Access-Control-Allow-Origin": "*",
+            "X-REQMETHOD": "send-v1",
+            "Content-Type": "application/json",
           },
           body: formData,
         });
