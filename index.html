@@ -34,7 +34,6 @@
     <div>
       <form class="content" action="https://send.pageclip.co/DQiU5q6UbkJI6OwuIVbChwXB4lmKYJ2p/votation" id="form"
         method="post">
-        <input type="text" name='part' value="asdasd">
         <div class="card">
           <div class="card__image">
             <img class="" src="./src/images/photo.jpg" alt="">
@@ -185,20 +184,17 @@
             <button class="button">Votar</button>
           </div>
         </div>
-        <button type="submit">asdsadas</button>
       </form>
     </div>
     <footer class="footer">
       <div class="sponsors"></div>
     </footer>
   </div>
-  <!-- <script>
+  <script>
     const formData = new FormData();
     const form = document.getElementById('form')
     form.addEventListener('submit', (e) => {
-      // e.preventDefault()
-      formData.append("participante", data)
-      console.log(formData);
+      e.preventDefault()
     })
     const card = document.getElementById('card')
     card.addEventListener('click', async (e) => {
@@ -207,21 +203,23 @@
 
       formData.append("participante", data)
       console.log(formData);
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          headers: {
-            'Access-Control-Allow-Origin': '*'
-          },
-          body: formData
-        })
-        console.log(response);
-      } catch (error) {
-        console.log(error);
+      for (var pair of formData.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
       }
+      // try {
+      //   const response = await fetch(form.action, {
+      //     method: 'POST',
+      //     headers: {
+      //       'Access-Control-Allow-Origin': '*'
+      //     },
+      //     body: formData
+      //   })
+      //   console.log(response);
+      // } catch (error) {
+      //   console.log(error);
+      // }
     })
-  </script> -->
-  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+  </script>
 </body>
 
 </html>

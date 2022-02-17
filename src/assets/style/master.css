@@ -20,7 +20,7 @@ body {
 
 .wrapper::before {
   content: '';
-  background: url('./src/images/left.png');
+  background: url('../images/left.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -36,7 +36,7 @@ body {
 
 .wrapper::after {
   content: '';
-  background: url('./src/images/rigth.png');
+  background: url('../images/rigth.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -55,7 +55,7 @@ body {
 }
 
 .logo {
-  background: url('./src/images/logo.png');
+  background: url('../images/logo.png');
   width: 100%;
   height: 5em;
   background-position: center;
@@ -174,10 +174,60 @@ h1 {
 }
 
 .sponsors {
-  background: url('./src/images/sponsors.png');
+  background: url('../images/sponsors.png');
   width: 100%;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+/* Modal */
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(13 0 30 / 50%);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+/* Spinner */
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
