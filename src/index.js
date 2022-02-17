@@ -45,6 +45,10 @@ import "./assets/style/master.css";
   const cards = document.querySelectorAll(".button");
   cards.forEach((e) => {
     e.addEventListener("click", async (e) => {
+      // return if already vote
+      if (getCookie("4ca5d171acaac2c5ca261c97b0d40383"))
+        return window.location.replace("success.html");
+
       const parent = e.currentTarget.parentElement;
       const data = parent.firstElementChild.innerText;
       onLoading();
