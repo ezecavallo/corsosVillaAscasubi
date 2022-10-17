@@ -7,7 +7,7 @@ import show3 from "../assets/images/show3.jpeg";
 const PageThree = () => {
   return (
     <>
-      <Container w="80%" maxW="1400px">
+      <Container w="80%" maxW="1400px" mb="30em">
         <Heading textAlign={"center"} marginY="3em">
           Viví tus noches <br /> a pura alegría
         </Heading>
@@ -15,7 +15,6 @@ const PageThree = () => {
           <Box
             w="100%"
             h="100%"
-            marginBottom="30em"
             display="block"
             borderRadius="10px"
             overflow={"hidden"}
@@ -25,7 +24,6 @@ const PageThree = () => {
           <Box
             w="100%"
             h="100%"
-            marginBottom="30em"
             display="block"
             borderRadius="10px"
             overflow={"hidden"}
@@ -35,7 +33,6 @@ const PageThree = () => {
           <Box
             w="100%"
             h="100%"
-            marginBottom="30em"
             display="block"
             borderRadius="10px"
             overflow={"hidden"}

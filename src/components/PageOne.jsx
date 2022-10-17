@@ -1,6 +1,6 @@
 import { Box, Button, Text, Flex } from "@chakra-ui/react";
 import Image from "next/image";
-import Logo from "../assets/images/logo.png";
+import Logo from "../assets/images/logo.webp";
 
 const PageOne = () => {
   return (

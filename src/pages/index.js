@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useState } from "react";
 
 import { Container, useMediaQuery } from "@chakra-ui/react";
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
@@ -11,6 +10,7 @@ import PageThree from "../components/PageThree";
 
 const Home = () => {
   const [isLessThan800] = useMediaQuery("(max-width: 800px)");
+  const [isLessThan480] = useMediaQuery("(max-width: 480px)");
 
   return (
     <>
@@ -38,14 +38,24 @@ const Home = () => {
         </Parallax>
 
         <Parallax
-          translateY={["-100px", "600px"]}
-          opacity={[-2, 8]}
-          speed={-10}
-          style={{ marginTop: "-300px", paddingBottom: "200px" }}
+          translateY={
+            isLessThan480 ? ["-100px", "1200px"] : ["-100px", "600px"]
+          }
+          opacity={[-2, 15]}
+          speed={-8}
+          style={{
+            marginTop: "-200px",
+            paddingBottom: isLessThan480 ? "600px" : "200px",
+          }}
         >
           <PageThree />
         </Parallax>
-        <Parallax>
+        <Parallax
+          style={{
+            marginTop: "100px",
+            marginBottom: "50px",
+          }}
+        >
           <PageOne />
         </Parallax>
       </Container>
