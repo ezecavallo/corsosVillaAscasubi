@@ -1,9 +1,9 @@
 import Head from "next/head";
 
-import { Container, useMediaQuery } from "@chakra-ui/react";
-import { Parallax, ParallaxBanner } from "react-scroll-parallax";
-import { AnimatePresence } from "framer-motion";
+import { Container, useMediaQuery, Box } from "@chakra-ui/react";
+import { Parallax } from "react-scroll-parallax";
 
+import Header from "../components/Header";
 import PageOne from "../components/PageOne";
 import PageTwo from "../components/PageTwo";
 import PageThree from "../components/PageThree";
@@ -17,6 +17,7 @@ const Home = () => {
       <Head>
         <title>Corsos - Villa Ascasubi</title>
       </Head>
+      {!isLessThan480 ? <Header /> : <Box h="100px"></Box>}
       <Container
         as="section"
         maxW="100%"

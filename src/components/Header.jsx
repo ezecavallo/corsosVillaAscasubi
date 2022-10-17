@@ -1,4 +1,5 @@
-import { Container, Button, Box, Stack, Link } from "@chakra-ui/react";
+import { Stack, Link } from "@chakra-ui/react";
+import LinkNext from "next/link";
 
 const Header = () => {
   return (
@@ -15,7 +16,9 @@ const Header = () => {
       <Link>Inicio</Link>
       <Link>Inscribirse</Link>
       <Link>Entradas</Link>
-      <Link>Contacto</Link>
+      <Link as={LinkNext} href="votation">
+        Votacion
+      </Link>
     </Stack>
   );
 };
