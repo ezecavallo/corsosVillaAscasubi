@@ -2,3 +2,9 @@
   for = "/*"
   [headers.values]
   Access-Control-Allow-Origin = "*"
+  for = "/"
+  [headers.values]
+  Access-Control-Allow-Origin = "*"
+  for = "/.next/"
+  [headers.values]
+  Access-Control-Allow-Origin = "*"

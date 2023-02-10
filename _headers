@@ -1,5 +1,7 @@
 /*
   Access-Control-Allow-Origin: *
+/.next/*
+  Access-Control-Allow-Origin: *
 /dist/*
   Access-Control-Allow-Origin: *
 /dist/index.html
