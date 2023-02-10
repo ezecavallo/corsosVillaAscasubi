@@ -20,6 +20,13 @@ export default function _App({ Component, pageProps }) {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
+        <style jsx global>{`
+          /* Other global styles such as 'html, body' etc... */
+
+          #__next {
+            height: 100%;
+          }
+        `}</style>
         <Layout>
           <Component {...pageProps} />
         </Layout>
