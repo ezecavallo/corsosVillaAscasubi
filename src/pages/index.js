@@ -65,7 +65,7 @@ const Votation = ({ cookies }) => {
         `https://send.pageclip.co/DQiU5q6UbkJI6OwuIVbChwXB4lmKYJ2p/${category}`,
         {
           method: "POST",
-          mode: "cors",
+          mode: "no-cors",
           body: JSON.stringify({ participante: data }),
         }
       );
