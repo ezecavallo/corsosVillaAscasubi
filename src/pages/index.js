@@ -60,6 +60,7 @@ const Votation = ({ cookies }) => {
   };
 
   const handleSubmit = async (category, data) => {
+    setIsLoading(true);
     try {
       const response = await fetch(
         `https://send.pageclip.co/DQiU5q6UbkJI6OwuIVbChwXB4lmKYJ2p/${category}`,
@@ -68,10 +69,11 @@ const Votation = ({ cookies }) => {
           mode: "no-cors",
           body: JSON.stringify({ participante: data }),
         }
-      );
-      setIsLoading(true);
-      if (response.ok) onSuccess(category);
-      if (!response.ok) onError();
+      ).then((data) => {
+        onSuccess(category);
+      });
+      // if (response.ok) onSuccess(category);
+      // if (!response.ok) onError();
     } catch (error) {
       console.log(error);
       onError();
