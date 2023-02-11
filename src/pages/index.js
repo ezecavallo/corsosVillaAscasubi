@@ -115,66 +115,7 @@ const Votation = ({ cookies }) => {
   if (isSuccess)
     return (
       <>
-        <Head>
-          <meta charset="UTF-8" />
-          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-          <meta
-            name="descripción"
-            content="Elegí tu participante favorito de los Corsos de la Villa 2023. Villa Ascasubi se prepara para compartir una de las fiestas más convocantes de la región que se celebrará entre el viernes 10 y el sábado 11 de febrero."
-          />
-          <meta property="og:title" content="Corsos de la Villa 2023" />
-          <meta
-            property="og:description"
-            content="Viví la gran fiesta de los Corsos de la Villa 2023 🎭🎉"
-          />
-          <meta
-            property="og:url"
-            content="https://corsosvillaascasubi.com.ar/"
-          />
-          <meta property="og:image" content="./assets/images/socials.jpg" />
-          <meta name="twitter:title" content="Corsos de la Villa 2023" />
-          <meta
-            name="twitter:description"
-            content="Viví la gran fiesta de los Corsos de la Villa 2023 🎭🎉"
-          />
-          <meta name="twitter:image" content="./assets/images/socials.jpg" />
-          <meta name="twitter:card" content="summary" />
-          <link rel="canonical" href="https://corsosvillaascasubi.com.ar" />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="./assets/images/apple-touch-icon.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="./assets/images/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="./assets/images/favicon-16x16.png"
-          />
-          <link rel="manifest" href="./assets/images/site.webmanifest" />
-          <link
-            rel="mask-icon"
-            href="./assets/images/safari-pinned-tab.svg"
-            color="#5bbad5"
-          />
-          <meta
-            name="apple-mobile-web-app-title"
-            content="Votación - Corsos de la Villa 2023"
-          />
-          <meta
-            name="application-name"
-            content="Votación - Corsos de la Villa 2023"
-          />
-          <meta name="msapplication-TileColor" content="#da532c" />
-          <meta name="theme-color" content="#ffffff" />
-          <title>Votación - Corsos de la Villa 2023</title>
-        </Head>
+        <Head></Head>
         <header className="header">
           <Link href="/">
             <div className="logo"></div>
@@ -198,6 +139,63 @@ const Votation = ({ cookies }) => {
     return (
       <>
         <Head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta
+            name="descripción"
+            content="Elegí tu participante favorito de los Corsos de la Villa 2023. Villa Ascasubi se prepara para compartir una de las fiestas más convocantes de la región que se celebrará entre el viernes 10 y el sábado 11 de febrero."
+          />
+          <meta property="og:title" content="Corsos de la Villa 2023" />
+          <meta
+            property="og:description"
+            content="Viví la gran fiesta de los Corsos de la Villa 2023 🎭🎉"
+          />
+          <meta
+            property="og:url"
+            content="https://corsosvillaascasubi.com.ar/"
+          />
+          <meta property="og:image" content="/images/socials.jpg" />
+          <meta name="twitter:title" content="Corsos de la Villa 2023" />
+          <meta
+            name="twitter:description"
+            content="Viví la gran fiesta de los Corsos de la Villa 2023 🎭🎉"
+          />
+          <meta name="twitter:image" content="/images/socials.jpg" />
+          <meta name="twitter:card" content="summary" />
+          <link rel="canonical" href="https://corsosvillaascasubi.com.ar" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicon/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/favicon/site.webmanifest" />
+          <link
+            rel="mask-icon"
+            href="/favicon/safari-pinned-tab.svg"
+            color="#5bbad5"
+          />
+          <meta
+            name="apple-mobile-web-app-title"
+            content="Votación - Corsos de la Villa 2023"
+          />
+          <meta
+            name="application-name"
+            content="Votación - Corsos de la Villa 2023"
+          />
+          <meta name="msapplication-TileColor" content="#da532c" />
+          <meta name="theme-color" content="#ffffff" />
           <title>Votación - Corsos de la Villa 2023</title>
         </Head>
         {isLoading && (
@@ -215,115 +213,153 @@ const Votation = ({ cookies }) => {
             <div className="logo"></div>
           </Link>
         </header>
-        <section className="headline">
-          <h1>Elige a tu participante favorito en cada categoría</h1>
-        </section>
-        {!forms["grupo-divertido"] && (
-          <div>
-            <>
-              <h2 className="form_header">Grupo más divertido</h2>
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                className="content"
-                action="https://send.pageclip.co/DQiU5q6UbkJI6OwuIVbChwXB4lmKYJ2p/votation"
-                id="form"
-                method="post"
-              >
-                {cards &&
-                  cards.map((card, i) => (
-                    <div className="card" key={i}>
-                      <div
-                        className="card__image"
-                        style={{ overflow: "hidden" }}
-                      >
-                        <Image layout="fill" className="" src={Photo} alt="" />
-                      </div>
-                      <div className="card__detail">
-                        <h3>{card.title}</h3>
-                        <button
-                          className="button"
-                          id="card"
-                          onClick={(e) =>
-                            handleSubmit("grupo-divertido", card.title)
-                          }
+        {isSuccess ? (
+          <section
+            className="headline"
+            style={{
+              padding: "1em",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <h1>Gracias por votar</h1>
+          </section>
+        ) : isSuccess === false ? (
+          <>
+            <section className="headline">
+              <h1>Elige a tu participante favorito en cada categoría</h1>
+            </section>
+            {!forms["grupo-divertido"] && (
+              <div>
+                <>
+                  <h2 className="form_header">Grupo más divertido</h2>
+                  <form
+                    onSubmit={(e) => e.preventDefault()}
+                    className="content"
+                    action="https://send.pageclip.co/DQiU5q6UbkJI6OwuIVbChwXB4lmKYJ2p/votation"
+                    id="form"
+                    method="post"
+                  >
+                    {cards &&
+                      cards.map((card, i) => (
+                        <div className="card" key={i}>
+                          <div
+                            className="card__image"
+                            style={{ overflow: "hidden" }}
+                          >
+                            <Image
+                              layout="fill"
+                              className=""
+                              src={Photo}
+                              alt=""
+                            />
+                          </div>
+                          <div className="card__detail">
+                            <h3>{card.title}</h3>
+                            <button
+                              className="button"
+                              id="card"
+                              onClick={(e) =>
+                                handleSubmit("grupo-divertido", card.title)
+                              }
+                            >
+                              Votar
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                  </form>
+                </>
+              </div>
+            )}
+            {!forms["mejor-puesta"] && (
+              <div>
+                <h2 className="form_header">Mejor puesta en escena</h2>
+                <form
+                  onSubmit={(e) => e.preventDefault()}
+                  className="content"
+                  action="https://send.pageclip.co/DQiU5q6UbkJI6OwuIVbChwXB4lmKYJ2p/votation"
+                  id="form"
+                  method="post"
+                >
+                  {cards &&
+                    cards.map((card, i) => (
+                      <div className="card" key={i}>
+                        <div
+                          className="card__image"
+                          style={{ overflow: "hidden" }}
                         >
-                          Votar
-                        </button>
+                          <Image
+                            layout="fill"
+                            className=""
+                            src={Photo}
+                            alt=""
+                          />
+                        </div>
+                        <div className="card__detail">
+                          <h3>{card.title}</h3>
+                          <button
+                            className="button"
+                            id="card"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleSubmit("mejor-puesta", card.title);
+                            }}
+                          >
+                            Votar
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  ))}
-              </form>
-            </>
-          </div>
-        )}
-        {!forms["mejor-puesta"] && (
-          <div>
-            <h2 className="form_header">Mejor puesta en escena</h2>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="content"
-              action="https://send.pageclip.co/DQiU5q6UbkJI6OwuIVbChwXB4lmKYJ2p/votation"
-              id="form"
-              method="post"
-            >
-              {cards &&
-                cards.map((card, i) => (
-                  <div className="card" key={i}>
-                    <div className="card__image" style={{ overflow: "hidden" }}>
-                      <Image layout="fill" className="" src={Photo} alt="" />
-                    </div>
-                    <div className="card__detail">
-                      <h3>{card.title}</h3>
-                      <button
-                        className="button"
-                        id="card"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleSubmit("mejor-puesta", card.title);
-                        }}
-                      >
-                        Votar
-                      </button>
-                    </div>
-                  </div>
-                ))}
-            </form>
-          </div>
-        )}
-        {!forms["mejor-disfraz"] && (
-          <div>
-            <h2 className="form_header">Mejor disfraz grupal</h2>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="content"
-              action="https://send.pageclip.co/DQiU5q6UbkJI6OwuIVbChwXB4lmKYJ2p/votation"
-              id="form"
-              method="post"
-            >
-              {cards &&
-                cards.map((card, i) => (
-                  <div className="card" key={i}>
-                    <div className="card__image" style={{ overflow: "hidden" }}>
-                      <Image layout="fill" className="" src={Photo} alt="" />
-                    </div>
-                    <div className="card__detail">
-                      <h3>{card.title}</h3>
-                      <button
-                        className="button"
-                        id="card"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleSubmit("mejor-disfraz", card.title);
-                        }}
-                      >
-                        Votar
-                      </button>
-                    </div>
-                  </div>
-                ))}
-            </form>
-          </div>
-        )}
+                    ))}
+                </form>
+              </div>
+            )}
+            {!forms["mejor-disfraz"] && (
+              <div>
+                <h2 className="form_header">Mejor disfraz grupal</h2>
+                <form
+                  onSubmit={(e) => e.preventDefault()}
+                  className="content"
+                  action="https://send.pageclip.co/DQiU5q6UbkJI6OwuIVbChwXB4lmKYJ2p/votation"
+                  id="form"
+                  method="post"
+                >
+                  {cards &&
+                    cards.map((card, i) => (
+                      <div className="card" key={i}>
+                        <div
+                          className="card__image"
+                          style={{ overflow: "hidden" }}
+                        >
+                          <Image
+                            layout="fill"
+                            className=""
+                            src={Photo}
+                            alt=""
+                          />
+                        </div>
+                        <div className="card__detail">
+                          <h3>{card.title}</h3>
+                          <button
+                            className="button"
+                            id="card"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleSubmit("mejor-disfraz", card.title);
+                            }}
+                          >
+                            Votar
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                </form>
+              </div>
+            )}
+          </>
+        ) : null}
         <footer className="footer">
           <div className="sponsors"></div>
         </footer>
