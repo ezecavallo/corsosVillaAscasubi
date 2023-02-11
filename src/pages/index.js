@@ -166,7 +166,7 @@ const Votation = ({ cookies }) => {
         {!forms["grupo-divertido"] && (
           <div>
             <>
-              <h2 className="form_header">Grupo divertido</h2>
+              <h2 className="form_header">Grupo más divertido</h2>
               <form
                 onSubmit={(e) => e.preventDefault()}
                 className="content"
@@ -237,7 +237,7 @@ const Votation = ({ cookies }) => {
         )}
         {!forms["mejor-disfraz"] && (
           <div>
-            <h2 className="form_header">Mejor disfraz</h2>
+            <h2 className="form_header">Mejor disfraz grupal</h2>
             <form
               onSubmit={(e) => e.preventDefault()}
               className="content"
