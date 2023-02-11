@@ -116,6 +116,63 @@ const Votation = ({ cookies }) => {
     return (
       <>
         <Head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta
+            name="descripción"
+            content="Elegí tu participante favorito de los Corsos de la Villa 2023. Villa Ascasubi se prepara para compartir una de las fiestas más convocantes de la región que se celebrará entre el viernes 10 y el sábado 11 de febrero."
+          />
+          <meta property="og:title" content="Corsos de la Villa 2023" />
+          <meta
+            property="og:description"
+            content="Viví la gran fiesta de los Corsos de la Villa 2023 🎭🎉"
+          />
+          <meta
+            property="og:url"
+            content="https://corsosvillaascasubi.com.ar/"
+          />
+          <meta property="og:image" content="./assets/images/socials.jpg" />
+          <meta name="twitter:title" content="Corsos de la Villa 2023" />
+          <meta
+            name="twitter:description"
+            content="Viví la gran fiesta de los Corsos de la Villa 2023 🎭🎉"
+          />
+          <meta name="twitter:image" content="./assets/images/socials.jpg" />
+          <meta name="twitter:card" content="summary" />
+          <link rel="canonical" href="https://corsosvillaascasubi.com.ar" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/images/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/images/favicon-16x16.png"
+          />
+          <link rel="manifest" href="./assets/images/site.webmanifest" />
+          <link
+            rel="mask-icon"
+            href="./assets/images/safari-pinned-tab.svg"
+            color="#5bbad5"
+          />
+          <meta
+            name="apple-mobile-web-app-title"
+            content="Votación - Corsos de la Villa 2023"
+          />
+          <meta
+            name="application-name"
+            content="Votación - Corsos de la Villa 2023"
+          />
+          <meta name="msapplication-TileColor" content="#da532c" />
+          <meta name="theme-color" content="#ffffff" />
           <title>Votación - Corsos de la Villa 2023</title>
         </Head>
         <header className="header">
