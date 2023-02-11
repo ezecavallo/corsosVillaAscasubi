@@ -75,7 +75,6 @@ const Votation = ({ cookies }) => {
       // if (response.ok) onSuccess(category);
       // if (!response.ok) onError();
     } catch (error) {
-      console.log(error);
       onError();
     }
   };
@@ -113,7 +112,6 @@ const Votation = ({ cookies }) => {
     },
   ]);
 
-  console.log(isSuccess, "succes");
   if (isSuccess)
     return (
       <>
@@ -161,7 +159,7 @@ const Votation = ({ cookies }) => {
           </Link>
         </header>
         <section className="headline">
-          <h1>Elige a tu participante favorito en cada categoría:</h1>
+          <h1>Elige a tu participante favorito en cada categoría</h1>
         </section>
         {!forms["grupo-divertido"] && (
           <div>
