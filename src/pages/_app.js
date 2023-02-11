@@ -50,17 +50,17 @@ export default function _App({ Component, pageProps }) {
             content="/images/favicon/browserconfig.xml"
           />
           <meta name="theme-color" content="#ffffff" />
-          <Script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-S34T6XQDR9"
-          ></Script>
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`window.dataLayer = window.dataLayer || [];
+        </Head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-S34T6XQDR9"
+          strategy="afterInteractive"
+        ></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-S34T6XQDR9');`}
-          </Script>
-        </Head>
+        </Script>
         <style jsx global>{`
           /* Other global styles such as 'html, body' etc... */
 
