@@ -142,7 +142,7 @@ const Votation = ({ cookies }) => {
           <meta charset="UTF-8" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta
-            name="descripción"
+            name="description"
             content="Elegí tu participante favorito de los Corsos de la Villa 2023. Villa Ascasubi se prepara para compartir una de las fiestas más convocantes de la región que se celebrará entre el viernes 10 y el sábado 11 de febrero."
           />
           <meta property="og:title" content="Corsos de la Villa 2023" />
